@@ -57,5 +57,22 @@ namespace Tacos
             _context.Remove(tacos);
             _context.SaveChanges();
         }
+
+        public void AddIngredient()
+        {
+            Console.WriteLine("Saisir id du tacos");
+            int id = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Saisir nom de l'ingrédient");
+            var name = Console.ReadLine();
+
+            var ingred = new Ingredient()
+            {
+                Name = name
+            };
+
+            _context.Ingredient.Add(ingred);
+            _context.SaveChanges();
+        }
     }
 }
